@@ -1,0 +1,94 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6">
+    <div class="flex flex-row sm:flex-row flex-auto sm:items-center min-w-0">
+      <div class="flex items-center pr-2 sm:mt-0 sm:mr-2 space-x-3">
+        <mat-icon [routerLink]="['../overview']" class="text-white" svgIcon="heroicons_outline:home"></mat-icon>
+      </div>
+      <div class="flex flex-auto items-center mr-4 min-w-0">
+        <input type="text" id="default-input"  #searchInput (keyup)="onSearchCard(searchInput.value)" 
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div>
+      <div class="flex items-center sm:mt-0 sm:ml-2 space-x-3">
+        <button (click)="addCard()"
+          class="bg-white w-full hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded ">
+          ADD
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-auto overflow-auto -mt-px pt-4 sm:pt-6">
+    <div class="w-full max-w-screen-xl mx-auto">
+
+      <!-- Card Credit -->
+      <div (click)="viewCard(card)" *ngFor="let card of cardLists; let i = index; trackBy: trackByFn" id="card"
+        class="relative h-60 rounded-2xl font-mono m-8 text-white overflow-hidden cursor-pointer transition-all duration-500"
+        style="transition: 0.6s;transform-style: preserve-3d;">
+
+        <!-- Front content -->
+        <div
+          class="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-6 p-6 bg-gradient-to-tr from-blue-900 to-blue-700 transition-all duration-100 delay-200 z-20"
+          style="transform: rotateY(0deg);">
+
+          <div class="flex justify-between items-center">
+            <img
+              src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
+              alt='Smart card' class="w-12">
+
+            <img *ngIf="card.CardType=='Visa'" src="https://cdn-icons-png.flaticon.com/512/179/179457.png"
+              alt="Visa image" class="w-18">
+
+            <img *ngIf="card.CardType=='MasterCard'"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/1200px-Mastercard_2019_logo.svg.png"
+              alt="Visa image" class="w-18">
+
+            <img *ngIf="card.CardType=='AmericanExpress'"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"
+              alt="Visa image" class="w-18">
+
+            <img *ngIf="card.CardType=='Discover'"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Discover_Card_logo.svg/2560px-Discover_Card_logo.svg.png"
+              alt="Visa image" class="w-18">
+
+            <img *ngIf="card.CardType=='JCB'"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/JCB_logo.svg/1280px-JCB_logo.svg.png"
+              alt="Visa image" class="w-18">
+
+              <img *ngIf="card.CardType=='Others'"
+              src="https://cdn-icons-png.flaticon.com/512/147/147258.png"
+              alt="Visa image" class="w-18">
+          </div>
+
+          <!-- CardNumber -->
+          <div class="">
+            <label for="" class="hidden">Card Number</label>
+            <span readonly class="outline-none w-full bg-transparent text-center text-2xl">
+              {{card.CardNumber}}
+            </span>
+          </div>
+
+          <div class="w-full flex flex-row justify-between">
+
+            <div class="w-full flex flex-col">
+              <label for="">Card holder</label>
+              <span id="" value="Daniel Castillo Guindos" readonly class="outline-none bg-transparent">
+                {{card.CardName}}
+              </span>
+            </div>
+
+            <div class="w-1/4 flex flex-col">
+              <label for="">Expires</label>
+              <span class="outline-none bg-transparent">
+                {{card.Expiry}}
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+/* Variables */
+:root {
+    --theme-vertical-navigation-thin-width: 80px;
+}
+
+theme-vertical-navigation {
+
+    /* Thin appearance overrides */
+    &.theme-vertical-navigation-appearance-thin {
+        width: var(--theme-vertical-navigation-thin-width);
+        min-width: var(--theme-vertical-navigation-thin-width);
+        max-width: var(--theme-vertical-navigation-thin-width);
+
+        /* Left positioned */
+        &.theme-vertical-navigation-position-left {
+
+            &.theme-vertical-navigation-mode-side {
+                margin-left: calc(var(--theme-vertical-navigation-thin-width) * -1);
+            }
+
+            &.theme-vertical-navigation-opened {
+                margin-left: 0;
+            }
+        }
+
+        /* Right positioned */
+        &.theme-vertical-navigation-position-right {
+
+            &.theme-vertical-navigation-mode-side {
+                margin-right: calc(var(--theme-vertical-navigation-thin-width) * -1);
+            }
+
+            &.theme-vertical-navigation-opened {
+                margin-right: 0;
+            }
+
+            .theme-vertical-navigation-aside-wrapper {
+                left: auto;
+                right: var(--theme-vertical-navigation-thin-width);
+            }
+        }
+
+        /* Wrapper */
+        .theme-vertical-navigation-wrapper {
+
+            /* Content */
+            .theme-vertical-navigation-content {
+
+                > theme-vertical-navigation-aside-item,
+                > theme-vertical-navigation-basic-item {
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 64px;
+                    min-height: 64px;
+                    max-height: 64px;
+                    padding: 0 16px;
+
+                    .theme-vertical-navigation-item-wrapper {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .theme-vertical-navigation-item {
+                            justify-content: center;
+                            padding: 12px;
+                            border-radius: 4px;
+
+                            .theme-vertical-navigation-item-icon {
+                                margin: 0;
+                            }
+
+                            .theme-vertical-navigation-item-arrow,
+                            .theme-vertical-navigation-item-badge-content,
+                            .theme-vertical-navigation-item-title-wrapper {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                > theme-vertical-navigation-collapsable-item {
+                    display: none
+                }
+
+                > theme-vertical-navigation-group-item {
+
+                    > .theme-vertical-navigation-item-wrapper {
+                        display: none
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .theme-vertical-navigation-aside-wrapper {
+            left: var(--theme-vertical-navigation-thin-width);
+        }
+    }
+}

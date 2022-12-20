@@ -1,0 +1,65 @@
+<div class="mt-4 text-md uppercase text-center tracking-tight leading-tight">Register for Account</div>
+
+<!-- Sign in form -->
+<form class="mt-4" [formGroup]="registerForm" #signInNgForm="ngForm">
+
+   <!-- Email field -->
+   <mat-form-field class="w-full">
+    <mat-label class="text-black">First Name</mat-label>
+    <input class="text-black" id="FirstName" placeholder="Enter firstname" matInput [formControlName]="'FirstName'">
+    <mat-error class="text-red">
+      First name is required
+    </mat-error>
+  </mat-form-field>
+
+   <!-- Email field -->
+   <mat-form-field class="w-full">
+    <mat-label class="text-black">Last Name</mat-label>
+    <input class="text-black" id="LastName" placeholder="Enter lastname" matInput [formControlName]="'LastName'">
+    <mat-error>
+      last name  is required
+    </mat-error>
+  </mat-form-field>
+  <!-- Email field -->
+  <mat-form-field class="w-full">
+    <mat-label class="text-black">Email address</mat-label>
+    <input class="text-black" id="Email" placeholder="Enter email address" matInput [formControlName]="'Email'">
+    <mat-error class="text-red">
+      Email is required
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Password field -->
+  <mat-form-field class="w-full">
+    <mat-label class="text-black">Password</mat-label>
+    <input class="text-black" id="password" placeholder="Enter password" matInput type="password" [formControlName]="'Password'"
+      #passwordField>
+    <button mat-icon-button type="button"
+      (click)="passwordField.type === 'password' ? passwordField.type = 'text' : passwordField.type = 'password'"
+      matSuffix>
+      <mat-icon class="icon-size-5" *ngIf="passwordField.type === 'password'"
+        [svgIcon]="'heroicons_solid:eye'"></mat-icon>
+      <mat-icon class="icon-size-5" *ngIf="passwordField.type === 'text'"
+        [svgIcon]="'heroicons_solid:eye-off'"></mat-icon>
+    </button>
+    <mat-error class="text-red">
+      Password is required
+    </mat-error>
+  </mat-form-field>
+
+
+
+  <!-- Submit button -->
+  <button class="theme-mat-button-large bg-gray-900 text-white rounded w-full mt-2" mat-flat-button [color]="'primary'"
+    [disabled]="registerForm.disabled" (click)="register()">
+    <span *ngIf="!registerForm.disabled">
+      REGISTER
+    </span>
+    <mat-progress-spinner *ngIf="registerForm.disabled" [diameter]="24" [mode]="'indeterminate'"></mat-progress-spinner>
+  </button>
+  <button [routerLink]="['/account/signin']" class="theme-mat-button-large border text-black rounded w-full mt-2"
+    mat-stroked-button>
+    LOGIN
+  </button>
+
+</form>

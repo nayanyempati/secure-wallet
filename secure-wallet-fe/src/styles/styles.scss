@@ -1,0 +1,40 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Theme's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+
+.success {
+    border-left-color: rgb(23, 141, 23);
+    border-left-width: 10px;
+    border-left-style: solid;
+    border-radius: 10px !important;
+    color:#FFF !important;
+    background-color: rgb(23, 141, 23) !important;
+}
+
+.error {
+    border-left-color: rgb(146, 11, 11);
+    border-left-width: 10px;
+    border-left-style: solid;
+    color:#FFF !important;
+    border-radius: 10px !important;
+    background-color: rgb(146, 11, 11) !important;
+}
+
+.warning, .failed {
+    border-left-color: #F09D0F;
+    border-left-width: 10px;
+    border-left-style: solid;
+    color:#FFF !important;
+    border-radius: 10px !important;
+    background-color: #F09D0F !important;
+}
+
+.mat-snack-bar-container {
+    margin-top: 6rem !important;
+}
+
+.mdc-tab{
+    background: #F5F5F5 !important;
+    margin-right: 5px !important;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "secure-wallet-fe",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

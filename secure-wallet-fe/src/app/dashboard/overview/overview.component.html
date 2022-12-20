@@ -1,0 +1,54 @@
+<div  class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto  -mt-px sm:pt-6">
+        <div class="w-full max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-2 min-w-0">
+                <div [routerLink]="['../listpasswords']" class="flex flex-col flex-auto p-6 bg-card shadow rounded ">
+                    <div class="flex flex-col items-center mt-2">
+                        <mat-icon class="icon-size-10 text-black" svgIcon="heroicons_outline:key"></mat-icon>
+                        <div class="tracking-tight text-center text-black pt-5 leading-none ">PASSWORDS</div>
+
+                    </div>
+                </div>
+
+
+                <div [routerLink]="['../listcards']" class="flex flex-col flex-auto p-6 bg-card shadow rounded ">
+                    <div class="flex flex-col items-center mt-2">
+                        <mat-icon class="icon-size-10 text-black" svgIcon="heroicons_outline:credit-card"></mat-icon>
+                        <div class="tracking-tight text-center text-black pt-5 leading-none ">CARDS</div>
+
+                    </div>
+                </div>
+                <!-- Issues -->
+                <div (click)="myProfile()" class="flex flex-col flex-auto p-6 bg-card shadow rounded ">
+                    <div class="flex flex-col items-center mt-2">
+                        <mat-icon class="icon-size-10 text-black" svgIcon="heroicons_outline:user-circle"></mat-icon>
+                        <div class="tracking-tight text-center text-black pt-5 leading-none ">MY PROFILE</div>
+
+                    </div>
+                </div>
+                <div (click)="changePassword()" class="flex sha flex-col flex-auto p-6 bg-card shadow rounded ">
+                    <div class="flex flex-col items-center mt-2">
+                        <mat-icon class="icon-size-10 text-black" svgIcon="mat_solid:vpn_key"></mat-icon>
+                        <div class="tracking-tight text-center text-black pt-5 leading-none ">SECURITY</div>
+
+                    </div>
+                </div>
+
+                <div (click)="changePicture()" class="flex flex-col flex-auto p-6 bg-card shadow rounded ">
+                    <div class="flex flex-col items-center mt-2">
+                        <mat-icon class="icon-size-10 text-black" svgIcon="mat_outline:image"></mat-icon>
+                        <div class="tracking-tight text-center text-black pt-5 leading-none ">CHANGE PICTURE</div>
+
+                    </div>
+                </div>
+                <div (click)="logout()" class="flex flex-col flex-auto p-6 bg-card shadow rounded ">
+                    <div class="flex flex-col items-center mt-2">
+                        <mat-icon  class="icon-size-10 text-black" svgIcon="mat_outline:logout"></mat-icon>
+                        <div class="tracking-tight text-center text-black pt-5 leading-none ">LOGOUT</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

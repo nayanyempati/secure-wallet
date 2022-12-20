@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.securewallet.cygate",
+                 "sha256_cert_fingerprints": ["16:1C:E6:C5:9A:79:A6:66:21:0D:E6:86:C9:84:BC:EA:F0:A1:D0:B9:44:3E:7F:82:7B:60:71:11:DC:C7:7D:5E"] }
+  }]
